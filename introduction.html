@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPv6资源导航-SHSSEDU-认识IPv6</title>
+    <link href="https://jsd.onmicrosoft.cn/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom ">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <svg class="bi me-2" width="40" height="32">
+                <use xlink:href="#bootstrap"></use>
+            </svg>
+            <span class="fs-4">IPv6资源导航-SHSSEDU</span>
+        </a>
+
+      
+    </nav>
+    <div class="container">
+
+        <div class="row row-offcanvas row-offcanvas-right">
+            <div class="col-xs-12 col-sm-9">
+            
+                <div class="jumbotron">
+                    <h1>认识IPv6地址</h1>
+                    <p>IPv6是用于数据包交换互联网络的网络层协议，是IPv4的下一代互联网协议版本。最终在1998年12月被互联网工程研究团队通过公布互联网标准规范（RFC 2460）的方式定义出台的。</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 id="intro1" style="padding-top: 60px; margin-top: -60px;">IPv6地址格式</h2>
+                        <p>IPv4地址是类似 A.B.C.D 的格式，它是32位，用 <code>.</code> 分成四段，用10进制表示；而IPv6地址类似 X:X:X:X:X:X:X:X
+                            的格式，它是128位的，用 <code>:</code> 分成8段，用16进制表示；可见，IPv6具有比IPv4大得多的编码地址空间，新增的地址空间支持
+                            <code>16<sup>32</sup></code> 个地址。以地球人口70亿人计算，每人平均可分得约 <code>4.86 × 10<sup>28</sup></code>
+                            个IPv6地址。
+                        </p>
+                        <p>IPv6从IPv4到IPv6最显著的变化就是网络地址的长度。 RFC 2373和RFC 2374定义的IPv6地址有128位长；IPv6地址的表达形式一般采用32个十六进制数。</p>
+                        <p>在很多场合，IPv6地址由两个逻辑部分组成：一个64位的网络前缀和一个64位的主机地址，其中主机地址通常根据物理地址自动生成，叫做EUI-64（或者64位扩展唯一标识）。</p>
+                        <p>按照定义，IPv6二进位制下为128位长度，以16位为一组，每组以冒号":"隔开，可以分为8组，每组以4位十六进制方式表示。例如：</p>
+                        <pre>
+  fe80:0000:0000:0000:0402:fecd:3f30:0785
+  </pre>
+                        <p>同时 RFC 2373 定义规定了IPv6在某些条件下可以省略。</p>
+                        <ol>
+                            <li>
+                                <p>每组数字前导的0可以省略，若该组全为0，则可省略为一个0。例如，下两行地址是相等的：</p>
+                                <pre>
+  fe80:<strong>0000</strong>:<strong>0000</strong>:<strong>0000</strong>:<strong>0402</strong>:fecd:3f30:<strong>0785</strong>
+  fe80:<strong>0</strong>:<strong>0</strong>:<strong>0</strong>:<strong>402</strong>:fecd:3f30:<strong>785</strong></pre>
+                            </li>
+                            <li>
+                                <p>可以用双冒号"::"表示一组0或多组连续的0，但这只能出现一次。例如，下两行地址是相等的：</p>
+                                <pre>
+  fe80:<strong>0</strong>:<strong>0</strong>:<strong>0</strong>:402:fecd:3f30:785
+  fe80<strong>::</strong>402:fecd:3f30:785</pre>
+                            </li>
+                        </ol>
+                    </div><!--/span-->
+                    <div class="col-md-12">
+                        <h2 id="intro2" style="padding-top: 60px; margin-top: -60px;">IPv6地址的分类</h2>
+                        <ol>
+                            <li>
+                                <p>单播（unicast）地址：标示一个网络接口，协议会把送往地址的数据包投送给其接口。</p>
+                            </li>
+                            <li>
+                                <p>任播（anycast）地址：像多点广播(Broadcast)一样，会有一组接收节点的地址栏表，但指定为 Anycast
+                                    的数据包，只会传送给距离最近或传送成本最低(根据路由表来判断)的其中一个接收地址，当该接收地址收到数据包并进行回应，且加入后续的传输。且只能分配给路由器。</p>
+                            </li>
+                            <li>
+                                <p>多播（multicast）地址：多播地址也被指定到一群不同的接口，送到多播地址的数据包会被传送到所有的地址。</p>
+                            </li>
+                        </ol>
+                    </div><!--/span-->
+                    <div class="col-md-12">
+                        <h2 id="intro3" style="padding-top: 60px; margin-top: -60px;">IPv6的特殊地址</h2>
+                        <ul>
+                            <li>
+                                <p>未指定地址：<code>::/128</code>。即0:0:0:0:0:0:0:0，只能作为尚未获得正式地址的主机的源地址，不能作为目的地址，不能分配给真实的网络接口。
+                                </p>
+                            </li>
+                            <li>
+                                <p>链路本地地址：<code>::1/128</code>。即0:0:0:0:0:0:0:1，回环地址，相当于IPv4中的localhost（127.0.0.1），ping
+                                    locahost可得到此地址。</p>
+                            </li>
+                            <li>
+                                <p>唯一区域位域：<code>fc00::/7</code>。唯一区域地址（ULA，unique local
+                                    address）只可在一群网站中绕送。用来取代站点本地位域。这地址包含一个40比特的伪随机数，以减少当网站合并或数据包误传到网络时碰撞的风险。这些地址除了只能用于区域外，还具备全局性的范畴，这点违反了唯一区域位域所取代的站点本地地址的定义。
+                                </p>
+                            </li>
+                            <li>
+                                <p>多播地址：<code>ff00::/8</code>。被指定到一群不同的接口，送到多播地址的数据包会被传送到所有的地址。</p>
+                            </li>
+                            <li>
+                                <p>本地链路地址：<code>fe80::/10</code>。用于单一链路，适用于自动配置、邻机发现等，路由器不转发以fe80开头的地址。</p>
+                            </li>
+                            <li>
+                                <p>全球可聚合地址：<code>2001::/16</code>。由 IANA 按地域和ISP进行分配，是最常用的IPv6地址，属于单播地址。</p>
+                            </li>
+                            <li>
+                                <p>6to4 地址：<code>2002::/16</code>。用于6to4自动构造隧道技术的地址，属于单播地址。</p>
+                            </li>
+                            <li>
+                                <p>兼容IPv4的IPv6地址：<code>::A.B.C.D</code>。其中 A.B.C.D
+                                    代表IPv4地址。自动将IPv6包以隧道方式在IPv4网络中传送的IPv4/IPv6节点将使用这些地址。</p>
+                            </li>
+                            <li>
+                                <p>IPv4映射过来的IPv6地址：<code>::FFFF:A.B.C.D </code>。其中 A.B.C.D 代表IPv4地址，例如
+                                    ::ffff:202.120.2.30，但它是在不支持IPv6的网上用于表示IPv4节点。</p>
+                            </li>
+                        </ul>
+                    </div><!--/span-->
+                    <div class="col-md-12">
+                        <h2 id="intro4" style="padding-top: 60px; margin-top: -60px;">IPv6与IPv4简单互联网转换</h2>
+                        <p>在IPv6完全取代IPv4前，实现IPv6与IPv4互联互通的综合组网技术和策略。</p>
+                        <ol>
+                            <li>
+                                <p><strong>双堆栈(Dual IP stack
+                                        implementation)</strong>：将IPv6视为一种IPv4的延伸，以共享代码的方式去实现网络堆栈，其可以同时支持IPv4和IPv6。对于主机（终端）来讲，“双栈”是指其可以根据需要来对业务产生的数据进行IPv4封装或者IPv6封装。对于路由器来讲，“双栈”是指在一个路由器设备中维护IPv6和IPv4两套路由协议栈，使得路由器既能与IPv4主机也能与IPv6主机通信，分别支持独立的IPv6和IPv4路由协议，IPv4和IPv6路由信息按照各自的路由协议进
+                                    行计算，维护不同的路由表。IPv6数据报按照IPv6路由协议得到的路由表转发，IPv4数据报按照IPv4路由协议得到的路由表转发。</p>
+                            </li>
+                            <li>
+                                <p><strong>隧道(Tunneling)</strong>：IPv4/v6综合组网技术中经常使用到的一种机制。所谓“隧道”，简单地讲就是利用一种协议来传输另一种协议的数据技术。隧道包括隧道入口和隧道出口（隧道终点），这些隧道端点通常都是双栈节点。在隧道入口以一种协议的形式来对另外一种协议数据进行封装，并发送。在隧道出口对接收到的协议数据解封装，并做相应的处理。在隧道的入口通常要维护一些与隧道相关的信息，如记录隧道MTU等参数。在隧道的出口通常出于安全性的考虑要对封装的数据进行过滤，以防
+                                    止来自外部的恶意攻击。
+                                    隧道的配置方法分为手工配置隧道和自动配置隧道，而自动配置隧道又可以分为兼容地址自动隧道、6to4隧道、6over4、ISATAP、MPLS隧道、GRE隧道等，这些隧道的实现原理和技术细节都不相同，相应的，其应用场景也就不同。
+                                </p>
+                            </li>
+                        </ol>
+                    </div><!--/span-->
+                </div><!--/row-->
+            </div><!--/span-->
+</body>
+
+</html>

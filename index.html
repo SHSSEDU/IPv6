@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPv6资源导航-SHSSEDU</title>
+    <link href="https://jsd.onmicrosoft.cn/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .carousel-item img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .carousel-indicators li {
+            list-style: none;
+        }
+
+        a.link {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <nav class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom ">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <svg class="bi me-2" width="40" height="32">
+                <use xlink:href="#bootstrap"></use>
+            </svg>
+            <span class="fs-4">IPv6资源导航-SHSSEDU</span>
+        </a>
+
+        <ul class="nav nav-pills">
+            <li class="nav-item"><a href="#ipv6" class="nav-link active" aria-current="page">IPv6介绍</a></li>
+            <li class="nav-item"><a href="#instruction" class="nav-link">使用指南</a></li>
+            <li class="nav-item"><a href="#introduction" class="nav-link">技术文档</a></li>
+            <li class="nav-item"><a href="#links" class="nav-link">IPv6资源</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div id="ipDisplay" class="alert alert-success" role="alert">
+            正在检测中...
+        </div>
+
+        <script>
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'https://test.ip.mir6.com', true);
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    var response = xhr.responseText;
+                    var ip = response;
+                    document.getElementById('ipDisplay').innerHTML = '本站已支持IPv6访问，您访问本站的IP地址:' + ip;
+                } else {
+                    document.getElementById('ipDisplay').innerHTML = '本站已支持IPv6访问，无法获取IP地址';
+                }
+            };
+            xhr.send();
+        </script>
+        <!-- 幻灯片 -->
+        <div id="carouselExampleIndicators" class="carousel slide mt-3 container mb-3" data-bs-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://ipv6.fjut.edu.cn/_upload/tpl/03/e4/996/template996/img/deployment_2.png"
+                        alt="Slide 1">
+                    <div class="carousel-caption d-none d-md-block">
+                        <!-- <h5>标题 1</h5>
+                        <p>描述 1</p> -->
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://ipv6.fjut.edu.cn/_upload/tpl/03/e4/996/template996/img/deployment_2.png"
+                        alt="Slide 2">
+                    <div class="carousel-caption d-none d-md-block">
+                        <!-- <h5>标题 2</h5>
+                        <p>描述 2</p> -->
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://ipv6.fjut.edu.cn/_upload/tpl/03/e4/996/template996/img/deployment_2.png"
+                        alt="Slide 3">
+                    <div class="carousel-caption d-none d-md-block">
+                        <!-- <h5>标题 3</h5>
+                        <p>描述 3</p> -->
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </a>
+        </div>
+        <div class="container">
+            <h1 class="mt-5" id="ipv6">什么是IPv6？</h1>
+            <p class="lead">IPv6（Internet Protocol version 6）是互联网协议的第六个版本，它是目前广泛使用的IPv4（Internet Protocol version
+                4）的继任者。IPv6旨在解决IPv4所面临的地址耗尽和其他限制问题。</p>
+            <p>IPv6<a href="https://zh.wikipedia.org/wiki/IPv6" style="color: black;">-Wiki</a></p>
+        </div>
+        <div class="card-group justify-content-center">
+
+            <div class="card border-secondary col-6 col-sm-6 col-lg-6 ">
+                <div class="card-header">公告</div>
+                <div class="card-body text-secondary">
+                    <h5 class="card-title">IPv6资源导航上线啦！</h5>
+                    <p class="card-text">ipv6.shssedu.ac.cn 欢迎你的使用.</p>
+                </div>
+            </div>
+            <div class="card border-secondary  col-6 col-sm-6 col-lg-6">
+                <div class="card-header" id="instruction">使用指南</div>
+                <div class="card-body text-secondary">
+                    <h5 class="card-title">IPv6已经在互联网大规模普及，快来一起了解它的用法</h5>
+                    <p class="card-text">
+                    <ul>
+                        <li><a href="instruction/linux.html" class="link">Linux 用户配置 IPv6</a></li>
+                        <li><a href="instruction/mac.html" class="link">Mac 用户配置 IPv6</a></li>
+                        <li><a href="instruction/windows.html" class="link">Windows 用户配置 IPv6</a></li>
+                    </ul>
+                    <b>浏览器访问 IPv6 地址</b>， 在 IPv6 地址两边加上中括号，就可以通过浏览器访问了 例如http://[2402:4e00:1013:e500:0:9671:f018:4947]/
+                    </p>
+                </div>
+            </div>
+            <div class="card border-secondary  col-6 col-sm-6 col-lg-6">
+                <div class="card-header" id="introduction">技术文档</div>
+                <div class="card-body text-secondary">
+                    <h5 class="card-title">认识IPv6</h5>
+                    <p class="card-text">
+                        <ul>
+                        <li><a href="introduction.html" class="link">认识IPv6地址</a></li></ul>
+                        <li><a href="https://www.china-ipv6.cn/#/index/papersDetail" class="link">政策文件</a></li>
+                        <li><a href="https://www.china-ipv6.cn/#/index/papersDetail" class="link">技术文件</a></li>
+                        <li><a href="http://" class="link"></a></li>
+                    </p>
+                </div>
+            </div>
+            <div class="card border-secondary col-6 col-sm-6 col-lg-6">
+                <div class="card-header" id="links">IPv6资源</div>
+                <div class="card-body text-secondary">
+                    <h5 class="card-title">IPv6常用资源</h5>
+                    <p class="card-text">
+                    <ul>
+                        <li><a href="link/dns.html" class="link">IPv6 DNS</a></li>
+                        <!-- <li><a href="instruction/mac.html" class="link">Mac 用户配置 IPv6</a></li>
+                        <li><a href="instruction/windows.html" class="link">Windows 用户配置 IPv6</a></li> -->
+                        <li class="mt-4">了解全球 IPv6 支持情况</li>
+                      
+                            <a class="link" target="_blank" href="https://stats.labs.apnic.net/ipv6">APNIC</a>
+                            <a class="link" target="_blank" href="https://www.china-ipv6.cn/">信通院</a>
+                            <a class="link" target="_blank" href="https://ipv6c.cngi.edu.cn/">教育网</a>
+                            <a  class="link"target="_blank" href="https://www.google.com/intl/zh-cn/ipv6/statistics.html">Google</a>
+                            <a class="link" target="_blank" href="https://www.akamai.com/visualizations/state-of-the-internet-report/ipv6-adoption-visualization">Akamai</a>
+                      
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="card-group justify-content-center">
+            <div class="card border-secondary col-6 mt-5">
+                <div class="card-header" id="links">IPv6工具</div>
+                <div class="card-body text-secondary">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text">
+                    <ul>
+                        <li><a href="https://6.ipw.cn/" class="link">IPv6 IP查询</a></li>
+                        <li><a href="https://www.test-ipv6.com/index.html.zh_CN" class="link">TestIPv6</a></li>
+                        <li><a href="https://ipv6-test.com/" class="link">IPv6Test</a></li>
+                        <li><a href="https://ipv6test.google.com/" class="link">GoogleIPv6Test</a></li>
+                        <li><a href="https://test6.ustc.edu.cn/" class="link">中国科学技术大学测速网站</a></li>
+                        <li><a href="https://test6.nju.edu.cn/" class="link">南京大学测速站</a></li>
+                        <li><a href="https://mirrors6.tuna.tsinghua.edu.cn/" class="link">清华大学开源软件镜像站</a></li>
+                        <li><a href="https://ipv6.mirrors.ustc.edu.cn/" class="link">中国科学技术大学开源软件镜像</a></li>
+                        <!-- <li><a href="" class="link"></a></li>
+                        <li><a href="" class="link"></a></li> -->
+                    </ul>
+                    </p>
+                </div>
+            </div>
+            <div class="card border-secondary col-6 mt-5">
+                <div class="card-header" id="links">IPv6相关网站</div>
+                <div class="card-body text-secondary">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text">
+                    <ul>
+                        <li><a href="https://www.china-ipv6.cn/" class="link">国家IPv6发展监测平台</a></li>
+                        <li><a href="https://ipv6.baidu.com" class="link">百度</a></li>
+                        <li><a href="https://ipv6.google.com/" class="link">Google</a></li>
+                        <li><a href="https://www.edu.cn/xxh/ji_shu_ju_le_bu/cernet2_lpv6/" class="link">下一代互联网</a></li>
+                        <li><a href="https://www.kame.net/" class="link">KAME</a></li>
+                        <li><a href="v6.m3u" class="link">IPTV直播源</a></li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <footer class="text-body-secondary py-5">
+        <div class="container">
+            <a href="https://ipw.cn/ipv6webcheck/?site=ipv6.shssedu.ac.cn" title="本站支持IPv6访问" target='_blank'><img
+                    style='display:inline-block;vertical-align:middle' alt="本站支持IPv6访问"
+                    src="https://static.ipw.cn/icon/ipv6-s1.svg"></a>
+            <p class="mb-1"> © SHSSEDU ｜<a href="https://www.china-ipv6.cn/" target="_blank" rel="nofollow"
+                    class="link">国家IPv6发展监测平台</a> | 请遵守中国法律法规 </p>
+            <br>
+            <p>致力于普及IPv6，推进IPv6规模部署和应用，以全面推进IPv6技术创新与融合应用为主线，以提升应用广度深度为主攻方向</p>
+
+        </div>
+    </footer>
+    <script src="https://jsd.onmicrosoft.cn/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
