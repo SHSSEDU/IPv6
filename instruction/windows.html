@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>IPv6资源导航-SHSSEDU-Windows</title>
+    <link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/marked/marked.min.css">
+    <link href="https://jsd.onmicrosoft.cn/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom ">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <svg class="bi me-2" width="40" height="32">
+                <use xlink:href="#bootstrap"></use>
+            </svg>
+            <span class="fs-4">IPv6资源导航-SHSSEDU</span>
+        </a>
+
+        <ul class="nav nav-pills">
+            <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">IPv6介绍</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">使用指南</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">IPv6资源</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div id="markdown-content"></div>
+    </div>
+
+    <script src="https://jsd.onmicrosoft.cn/npm/marked/marked.min.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            var markdownContent = document.getElementById('markdown-content');
+
+            // 通过AJAX请求读取Markdown文件
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var markdownText = xhr.responseText;
+                    var renderedHtml = marked.parse(markdownText); // 使用marked.js将Markdown转换为HTML
+                    markdownContent.innerHTML = renderedHtml; // 将渲染后的HTML插入到页面中
+                }
+            };
+            xhr.open('GET', 'windows.md', true);  // 替换为您的Markdown文件路径
+            xhr.send();
+        });
+    </script>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .editor {
+            height: 100vh;
+            display: flex;
+        }
+
+        .input,
+        .output {
+            overflow: auto;
+            width: 50%;
+            height: 100%;
+            box-sizing: border-box;
+            padding: 0 20px;
+        }
+
+        .input {
+            border: none;
+            border-right: 1px solid #ccc;
+            resize: none;
+            outline: none;
+            background-color: #f6f6f6;
+            font-size: 14px;
+            font-family: 'Monaco', courier, monospace;
+            padding: 20px;
+        }
+
+        code {
+            color: #f66;
+        }
+    </style>
+
+</body>
+
+</html>
