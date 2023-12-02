@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>IPv6资源导航-SHSSEDU</title>
     <link href="https://jsd.onmicrosoft.cn/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -26,23 +26,28 @@
 <body>
 
 
-    <nav class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom ">
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-            <svg class="bi me-2" width="40" height="32">
-                <use xlink:href="#bootstrap"></use>
-            </svg>
-            <span class="fs-4">IPv6资源导航-SHSSEDU</span>
-        </a>
-
-        <ul class="nav nav-pills">
-            <li class="nav-item"><a href="#ipv6" class="nav-link active" aria-current="page">IPv6介绍</a></li>
-            <li class="nav-item"><a href="#instruction" class="nav-link">使用指南</a></li>
-            <li class="nav-item"><a href="#introduction" class="nav-link">技术文档</a></li>
-            <li class="nav-item"><a href="#links" class="nav-link">IPv6资源</a></li>
-        </ul>
-    </nav>
     <div class="container">
-        <div id="ipDisplay" class="alert alert-success" role="alert">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">IPv6资源导航-SHSSEDU</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" aria-current="page" href="#ipv6">IPv6介绍</a>
+                        <a class="nav-link" href="#instruction">使用指南</a>
+                        <a class="nav-link" href="#introduction">技术文档</a>
+                        <a class="nav-link" href="#links">IPv6资源</a>
+                        <a class="nav-link" href="https://shssedu.ac.cn/">SHSSEDU</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div id="ipDisplay" class="alert alert-success mt-6" role="alert">
             正在检测中...
         </div>
 
@@ -136,11 +141,11 @@
                 <div class="card-body text-secondary">
                     <h5 class="card-title">认识IPv6</h5>
                     <p class="card-text">
-                        <ul>
-                        <li><a href="introduction.html" class="link">认识IPv6地址</a></li></ul>
-                        <li><a href="https://www.china-ipv6.cn/#/index/papersDetail" class="link">政策文件</a></li>
-                        <li><a href="https://www.china-ipv6.cn/#/index/papersDetail" class="link">技术文件</a></li>
-                        <li><a href="http://" class="link"></a></li>
+                    <ul>
+                        <li><a href="introduction.html" class="link">认识IPv6地址</a></li>
+                    </ul>
+                    <li><a href="https://www.china-ipv6.cn/#/index/papersDetail" class="link">政策文件</a></li>
+                    <li><a href="https://www.china-ipv6.cn/#/index/papersDetail" class="link">技术文件</a></li>
                     </p>
                 </div>
             </div>
@@ -154,13 +159,15 @@
                         <!-- <li><a href="instruction/mac.html" class="link">Mac 用户配置 IPv6</a></li>
                         <li><a href="instruction/windows.html" class="link">Windows 用户配置 IPv6</a></li> -->
                         <li class="mt-4">了解全球 IPv6 支持情况</li>
-                      
-                            <a class="link" target="_blank" href="https://stats.labs.apnic.net/ipv6">APNIC</a>
-                            <a class="link" target="_blank" href="https://www.china-ipv6.cn/">信通院</a>
-                            <a class="link" target="_blank" href="https://ipv6c.cngi.edu.cn/">教育网</a>
-                            <a  class="link"target="_blank" href="https://www.google.com/intl/zh-cn/ipv6/statistics.html">Google</a>
-                            <a class="link" target="_blank" href="https://www.akamai.com/visualizations/state-of-the-internet-report/ipv6-adoption-visualization">Akamai</a>
-                      
+
+                        <a class="link" target="_blank" href="https://stats.labs.apnic.net/ipv6">APNIC</a>
+                        <a class="link" target="_blank" href="https://www.china-ipv6.cn/">信通院</a>
+                        <a class="link" target="_blank" href="https://ipv6c.cngi.edu.cn/">教育网</a>
+                        <a class="link" target="_blank"
+                            href="https://www.google.com/intl/zh-cn/ipv6/statistics.html">Google</a>
+                        <a class="link" target="_blank"
+                            href="https://www.akamai.com/visualizations/state-of-the-internet-report/ipv6-adoption-visualization">Akamai</a>
+
                     </ul>
                     </p>
                 </div>
@@ -198,6 +205,7 @@
                         <li><a href="https://ipv6.google.com/" class="link">Google</a></li>
                         <li><a href="https://www.edu.cn/xxh/ji_shu_ju_le_bu/cernet2_lpv6/" class="link">下一代互联网</a></li>
                         <li><a href="https://www.kame.net/" class="link">KAME</a></li>
+                        <li><a href="https://www.apnic.net/" class="link">APNIC</a></li>
                         <li><a href="v6.m3u" class="link">IPTV直播源</a></li>
                     </ul>
                     </p>
@@ -213,8 +221,7 @@
             <a href="https://ipw.cn/ipv6webcheck/?site=ipv6.shssedu.ac.cn" title="本站支持IPv6访问" target='_blank'><img
                     style='display:inline-block;vertical-align:middle' alt="本站支持IPv6访问"
                     src="https://static.ipw.cn/icon/ipv6-s1.svg"></a>
-            <p class="mb-1"> © SHSSEDU ｜<a href="https://www.china-ipv6.cn/" target="_blank" rel="nofollow"
-                    class="link">国家IPv6发展监测平台</a> | 请遵守中国法律法规 </p>
+            <p class="mb-1"> © SHSSEDU</p>
             <br>
             <p>致力于普及IPv6，推进IPv6规模部署和应用，以全面推进IPv6技术创新与融合应用为主线，以提升应用广度深度为主攻方向</p>
 
