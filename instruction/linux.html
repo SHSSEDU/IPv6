@@ -2,8 +2,9 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>IPv6资源导航-SHSSEDU-LINUX</title>
-    <link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/marked/marked.min.css">
+
     <link href="https://jsd.onmicrosoft.cn/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
@@ -19,61 +20,89 @@
        
     </nav>
     <div class="container">
-        <div id="markdown-content"></div>
+        <div class="col_lg_7">
+            <div class="info info-note">
+                <div class="title">CentOS IPv6配置(适用于centos\redhat\fedora)</div>
+            
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                    <th></th>
+                    <th>操作</th>
+                    <th>图示</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td>
+                    <td>打开对应网卡的网络配置文件</td>
+                    <td>vi /etc/sysconfig/network-scripts/ifcfg-eth0</td>
+                    </tr>
+                    <tr><td>2</td>
+                    <td>增加IPv6地址配置</td>
+                    <td>IPV6INIT=yes<p>
+                        IPV6_AUTOCONF=no</p><p>
+                        IPV6ADDR=2001:da8:7000:7:7::230</p><p>
+                        IPV6_DEFAULTGW=2001:da8:7000:7::1</p><p>
+                    </p></td>
+                    </tr>
+                    <tr><td>3</td>
+                    <td>重启网络服务</td>
+                    <td>service network restart</td>
+                    </tr>
+                    <tr><td>4</td>
+                    <td>设置IPv6 DNS服务器(可选)</td>
+                    <td>vi /etc/resolv.conf<p>
+                        nameserver 2001:4860:4860::8888
+                    </p></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            </div>
+            
+            <div class="info info-note">
+                <div class="title">Ubuntu IPv6配置(适用于ubuntu/debian)</div>
+            
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                    <th></th>
+                    <th>操作</th>
+                    <th>图示</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td>
+                    <td>打开网络接口配置文件</td>
+                    <td>vi /etc/network/interfaces</td>
+                    </tr>
+                    <tr><td>2</td>
+                    <td>增加对应接口的IPv6地址配置</td>
+                    <td>
+                        iface eth0 inet6 static<p style="text-indent: 2em;">
+                           address 2001:da8:7000:7::230</p><p style="text-indent: 2em;">
+                           netmask 64</p><p style="text-indent: 2em;">
+                           gateway 2001:da8:7000:7::1
+                    </p></td>
+                    </tr>
+                    <tr><td>3</td>
+                    <td>重启网络服务</td>
+                    <td>service networking restart</td>
+                    </tr>
+                    <tr><td>4</td>
+                    <td>设置IPv6 DNS服务器(可选)</td>
+                    <td>vi /etc/resolv.conf<p>
+                        nameserver 2001:4860:4860::8888
+                    </p></td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            
+            </div>
     </div>
 
-    <script src="https://jsd.onmicrosoft.cn/npm/marked/marked.min.js"></script>
-    <script>
-        window.addEventListener('DOMContentLoaded', function () {
-            var markdownContent = document.getElementById('markdown-content');
-
-            // 通过AJAX请求读取Markdown文件
-            var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    var markdownText = xhr.responseText;
-                    var renderedHtml = marked.parse(markdownText); // 使用marked.js将Markdown转换为HTML
-                    markdownContent.innerHTML = renderedHtml; // 将渲染后的HTML插入到页面中
-                }
-            };
-            xhr.open('GET', 'linux.md', true);  // 替换为您的Markdown文件路径
-            xhr.send();
-        });
-    </script>
-    <style>
-        body {
-            margin: 0;
-        }
-
-        .editor {
-            height: 100vh;
-            display: flex;
-        }
-
-        .input,
-        .output {
-            overflow: auto;
-            width: 50%;
-            height: 100%;
-            box-sizing: border-box;
-            padding: 0 20px;
-        }
-
-        .input {
-            border: none;
-            border-right: 1px solid #ccc;
-            resize: none;
-            outline: none;
-            background-color: #f6f6f6;
-            font-size: 14px;
-            font-family: 'Monaco', courier, monospace;
-            padding: 20px;
-        }
-
-        code {
-            color: #f66;
-        }
-    </style>
+    
 
 </body>
 

@@ -2,8 +2,8 @@
 
 <head>
     <meta charset="UTF-8">
+    <title>IPv6资源导航-SHSSEDU-IPv6连通性测试</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>IPv6资源导航-SHSSEDU-MAC</title>
     <link href="https://jsd.onmicrosoft.cn/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
@@ -15,13 +15,11 @@
             </svg>
             <span class="fs-4">IPv6资源导航-SHSSEDU</span>
         </a>
-
-       
     </nav>
     <div class="container">
         <div class="col_lg_7">
             <div class="info info-note">
-            <div class="title">MacOS系统IPv6配置<span class="right_more"> <i class="fa fa-angle-right"></i></span></div>
+            <div class="title">IPv6连通性测试<span class="right_more"> <i class="fa fa-angle-right"></i></span></div>
             
             <table class="table table-striped">
                 <thead>
@@ -33,22 +31,21 @@
                 </thead>
                 <tbody>
                     <tr><td>1</td>
-                    <td>打开网络偏好设置，显示网络对话框</td>
-                    <td><img src="imgs/mac/image002.png"></td>
+                        <td>打开命令提示符，输入ipconfig命令，检查是否获得IPv6地址。<p>
+                            命令：</p><p>ipconfig 或 ipconfig/all</p></td>
+                    <td><img src="imgs/ping/image002.jpg"></td>
                     </tr>
                     <tr><td>2</td>
-                    <td>点击高级，在出现的对话框选择TCP/IP</td>
-                    <td><img src="imgs/mac/image004.png"></td>
+                        <td>Ping网关，检查是否能够访问IPv6网关。<p>
+                            命令:</p><p>ping 或 ping -6</p></td>
+                    <td><img src="imgs/ping/image004.jpg"></td>
                     </tr>
                     <tr><td>3</td>
-                    <td>MacOS系统默认是自动获得IPv6地址，用户不需要修改IPv6配置</td>
-                    <td><img src="imgs/mac/image004.png"></td>
+                        <td>Ping外网地址，检查是否能够访问IPv6外网。<p>
+                            命令：</p><p>ping 或 ping -6</p></td>
+                    <td><img src="imgs/ping/image006.jpg"></td>
                     </tr>
              
-                    <tr><td>4</td>
-                    <td>如果需要手动设置IPv6地址，配置IPv6选择"手动",然后填写相应的网关、IPv6地址、子网前缀长度。</td>
-                    <td><img src="imgs/mac/image006.png"></td>
-                    </tr>
                </tbody>
             </table>
             </div>
@@ -56,7 +53,6 @@
             </div>
     </div>
 
-   
 </body>
 
 </html>
